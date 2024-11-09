@@ -431,20 +431,32 @@ void writeCSV(const std::string& filename) {
         else cout << "找不到工作时间" << endl;
     }
     
-    void showHelp()
-    {
-    std::cout <<std::endl<<std::endl<< "-----------公司薪酬管理系统------------"<< std::endl;
-    std::cout << "可用命令选项：" << std::endl;
-    std::cout << "1. 录入职工资料" << std::endl;
-    std::cout << "2. 增加职工" << std::endl;
-    std::cout << "3. 删除职工" << std::endl;
-    std::cout << "4. 修改职工资料" << std::endl;
-    std::cout << "5. 月薪发放" << std::endl;
-    std::cout << "6. 显示工资表" << std::endl;
-    std::cout << "7. 显示员工资料" << std::endl;
-    std::cout << "0. 退出系统" << std::endl;
-        std::cout << "---------------------------------------------------------"<<endl;
-    }
+void showHelp() {
+    // ANSI转义码颜色
+    const std::string reset = "\033[0m";
+    const std::string bold = "\033[1m";
+    const std::string cyan = "\033[36m";
+    const std::string green = "\033[32m";
+    const std::string yellow = "\033[33m";
+    const std::string red = "\033[31m";
+
+    // 标题部分
+    std::cout << cyan << std::endl << bold << "✨✨✨----------- 公司薪酬管理系统 ------------✨✨✨" << reset << std::endl;
+
+    // 菜单选项
+    std::cout << yellow << "可用命令选项：" << reset << std::endl;
+    std::cout << green << " 1️⃣ 录入职工资料➡️" << reset << std::endl;
+    std::cout << green << " 2️⃣ 增加职工➡️" << reset << std::endl;
+    std::cout << green << " 3️⃣ 删除职工🛠️" << reset << std::endl;
+    std::cout << green << " 4️⃣ 修改职工资料🛠️" << reset << std::endl;
+    std::cout << green << " 5️⃣ 月薪发放📢" << reset << std::endl;
+    std::cout << green << " 6️⃣ 显示工资表💡" << reset << std::endl;
+    std::cout << green << " 7️⃣ 显示员工资料💡" << reset << std::endl;
+    std::cout << red << " 0️⃣ 退出系统🔙" << reset << std::endl;
+
+    // 结束线
+    std::cout << cyan << bold << "---------------------------------------------------------" << reset << std::endl;
+}
 
     
    
@@ -491,7 +503,7 @@ public:
         std::string input;
         while (true) {
             showHelp();
-            cout << "请输入命令>>";
+            cout << "❓请输入命令>>";
             // std::getline(std::cin, input);
             cin >> input;
             // 输入 "exit" 时退出循环
