@@ -6,6 +6,7 @@
 #include<sstream>
 #include <functional>
 #include <iomanip>
+#include<limits>
 using namespace std;
 
 class Command;
