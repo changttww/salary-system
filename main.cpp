@@ -519,6 +519,10 @@ public:
             } else {
                 std::cout << "未知命令: " << input << std::endl;
             }
+            // 清除输入缓冲区中的换行符
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "按回车键继续..." << std::endl;
+                std::cin.get();  
         }
     }   
     ~Command(){
